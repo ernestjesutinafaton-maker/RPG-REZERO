@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG-GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ===== HEADER : bannière ===== -->
+    <header>
+        <div id="banniere">
+            <img class="ban-gauche" src="assets/icone_banniere_header en_haut_a gauche.png" alt="Illustration de la bannière">
+            <img class="ban-milieu" src="assets/icone_milieu_header.png" alt="Logo Re:Zero">
+
+            <div class="ban-niveau" title="Progression du niveau (0 à 20)">
+                <span class="borne">0</span>
+                <div class="piste"><div id="barre_niveau"></div></div>
+                <span class="borne">20</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 1. PERSONNAGE ===== -->
+        <section class="zone" id="fiche_personnage">
+            <h2 class="zone-titre">Fiche personnage</h2>
+
+            <div class="portrait-cadre">
+                <img id="img_perso" src="assets/subaru.png" alt="Subaru">
+            </div>
+
+<div class="identite">
+    <p id = "name"> Nom : <span id="name_perso">Subaru</span></p>
+    <p class="badge-classe"><span id="classe"></span></p>
+</div>
+
+<div class="stats">
+    <div class="stat">
+        <img id="img_force" src="assets/reinhard.jpg" alt="Force">
+        <p>Force : <br><br><span id="strength"></span></p>
+        <div class="mini-barre force"><div id="barre_force"></div></div>
+    </div>
+    <div class="stat">
+        <img id="img_magie" src="assets/magic.png" alt="Magie">
+        <p>Magie : <br><br><span id="magic"></span></p>
+        <div class="mini-barre magie"><div id="barre_magie"></div></div>
+    </div>
+</div>
+
+
+            <div class="inventaire">
+                <p class="ligne-niveau">Niveau : <span id="level"></span></p>
+                <p><img src="assets/icones/coins.jpg" alt="">Pièces : <p id="coins"></p></p>
+                <p><img src="assets/icones/key.png" alt="">Clé : <p id="possedeCle"></p></p>
+                <p><img src="assets/icones/chapeau.png" alt="">Chapeau : <p id="possedeChapeau"></p></p>
+            </div>
+        </section>
+
+        <!-- ===== 2. COMMANDES DE JEU ===== -->
+        <section id="commandes_de_jeu">
+
+            <!-- Combats -->
+            <div class="zone" id="combats">
+                <h2 class="zone-titre">Combats</h2>
+                <div class="cartes">
+                    <button class="carte" id="battre_fantome">
+                        <img src="assets/icones/illustration-realiste-fantome-halloween_52683-71081.avif" alt="Fantôme">
+                        <span>Battre le Fantôme</span>
+                    </button>
+                    <button class="carte" id="battre_loup">
+                        <img src="assets/icones/LoupGarouFeat.webp" alt="Loup">
+                        <span>Battre le Loup</span>
+                    </button>
+                    <button class="carte" id="battre_paladin">
+                        <img src="assets/icones/paladin.png" alt="Paladin">
+                        <span>Battre le Paladin</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Marchand : thème trésor -->
+            <div class="zone" id="marchand">
+                <h2 class="zone-titre">Le Marchand</h2>
+                <div class="marchand-contenu">
+                    <img class="marchand-img" src="assets/marchand.jpg" alt="Marchand">
+                    <div class="cartes">
+                        <button class="carte" id="acheter_cle">
+                            <img src="assets/icones/key.png" alt="Clé">
+                            <span>Acheter la clé</span>
+                            <small>3 pièces</small>
+                        </button>
+                        <button class="carte" id="acheter_chapeau">
+                            <img src="assets/icones/chapeau.png" alt="Chapeau">
+                            <span>Acheter le chapeau</span>
+                            <small>5 pièces</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boss : thème niveau max, rouge + flammes -->
+            <div class="zone" id="boss">
+                <div class="flammes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <h2 class="zone-titre">Le Boss</h2>
+                <div class="boss-contenu">
+                    <img class="boss-img" src="assets/boss.jpg" alt="Boss">
+                    <div class="boss-actions">
+                        <button class="carte" id="battre_le_boss">
+                            <img src="assets/icones/fight.png" alt="">
+                            <span>Affronter le boss</span>
+                            <small>Niveau 20 + clé</small>
+                        </button>
+                        <button class="carte" id="recommencer">
+                            <img src="assets/icones/reset.jpg" alt="">
+                            <span>Recommencer</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. MESSAGES ===== -->
+        <section class="zone" id="messages_de_jeu">
+            <h2 class="zone-titre">Journal de jeu</h2>
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div id="footer">
+            <img src="assets/icone_milieu_header.png">
+            
+            <p class="petit">Personnage : Subaru &middot; Fait avec HTML, CSS &amp; JavaScript &middot; &copy; 2026</p>
+        </div>
+    </footer>
+
+    <!-- Ton moteur de jeu -->
+    <script src="index.js"></script>
+    <!-- Gestion des images (personnage, barres, thèmes) -->
+    <script src="images.js"></script>
+</body>
+</html>
